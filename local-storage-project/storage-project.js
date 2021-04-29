@@ -6,10 +6,15 @@ window.addEventListener("DOMContentLoaded", (event) => {
     const quantity = document.getElementById('quantity') 
     localStorage.setItem(item, quantity.value)
   })
-
-  // const showCart = () => {
-
-  // };
+  
+const showCart = () => {
+ const list = document.getElementById('cartItems')
+   for(let key in localStorage) {
+     const listItem = document.createElement('li')
+     listItem.innerHTML = key + ': ' + localStorage.getItem(key)
+     list.appendChild(listItem)
+   }
+  };
 
   // const storeItem = () => {
 
